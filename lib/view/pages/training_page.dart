@@ -3,6 +3,7 @@ import 'package:training_page/view/widgets/customer_widget.dart';
 import 'package:training_page/view/widgets/listview_builder_widget.dart';
 import 'package:training_page/view/widgets/logo_widget.dart';
 import 'package:training_page/view/widgets/training_details_widget.dart';
+import 'package:stroke_text/stroke_text.dart';
 
 class TrainingPage extends StatelessWidget {
   const TrainingPage({super.key});
@@ -62,8 +63,9 @@ class TrainingPage extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                       children: <TextSpan>[
                         TextSpan(
-                            text: ' training',
-                            style: TextStyle(color: Colors.white)),
+                          text: ' training',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ],
                     ),
                   ),
@@ -104,6 +106,26 @@ class TrainingPage extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(right: 16),
                 child: ListViewWidget(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Container(
+                  width: 350,
+                  height: 3,
+                  color: Colors.white,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 3,
+                        width: 120,
+                        color: Colors.orange,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 16,
               ),
               const Row(
                 children: [
