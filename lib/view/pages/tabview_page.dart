@@ -2,18 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:training_page/view/pages/training_page.dart';
 import 'package:training_page/view/widgets/section_widget.dart';
 
-class TabViewPage extends StatelessWidget {
+class TabViewPage extends StatefulWidget {
   const TabViewPage({super.key});
 
+  @override
+  State<TabViewPage> createState() => _TabViewPageState();
+}
+
+bool selected = false;
+
+class _TabViewPageState extends State<TabViewPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xff6393c9),
           toolbarHeight: 70,
-          backgroundColor: const Color.fromARGB(255, 191, 226, 255),
           title: Image.asset('assets/images/appbar.png'),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  selected = !selected;
+                });
+              },
+              child: selected ? const Text('Login') : const Text('Logout'),
+            ),
+          ],
           bottom: const TabBar(
               indicatorSize: TabBarIndicatorSize.tab,
               indicatorWeight: 3,

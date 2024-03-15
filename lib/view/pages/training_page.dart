@@ -3,7 +3,6 @@ import 'package:training_page/view/widgets/customer_widget.dart';
 import 'package:training_page/view/widgets/listview_builder_widget.dart';
 import 'package:training_page/view/widgets/logo_widget.dart';
 import 'package:training_page/view/widgets/training_details_widget.dart';
-import 'package:stroke_text/stroke_text.dart';
 
 class TrainingPage extends StatelessWidget {
   const TrainingPage({super.key});
@@ -20,9 +19,19 @@ class TrainingPage extends StatelessWidget {
       'assets/images/global.png',
       'assets/images/enoc.png'
     ];
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 192, 222, 246),
-      body: SingleChildScrollView(
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xff6393c9),
+            Color(0xffd8eaff),
+            Color(0xffd8eaff),
+          ],
+        ),
+      ),
+      child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 24, bottom: 24),
           child: Column(
@@ -64,7 +73,33 @@ class TrainingPage extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text: ' training',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                            color: Color(0xFFd8eaff),
+                            shadows: [
+                              Shadow(
+                                offset: Offset(-1.5, -1.5),
+                                color: Color(0xFF294c73),
+                              ),
+                              Shadow(
+                                offset: Offset(1.5, -1.5),
+                                color: Color(
+                                  0xFF294c73,
+                                ),
+                              ),
+                              Shadow(
+                                offset: Offset(1.5, 1.5),
+                                color: Color(
+                                  0xFF294c73,
+                                ),
+                              ),
+                              Shadow(
+                                offset: Offset(-1.5, 1.5),
+                                color: Color(
+                                  0xFF294c73,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
